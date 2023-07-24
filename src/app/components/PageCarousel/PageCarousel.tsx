@@ -18,9 +18,6 @@ export const PageCarousel = ({ children, name } : PageCarouselProps) => {
         }
     }
 
-    console.log('rerender')
-    console.log(name)
-
     return (
         <div className="container flex flex-col flex-grow space-y-1">
             <div className="items-center flex flex-row pt-64 pb-60 overflow-x-visible">
@@ -58,7 +55,7 @@ export const PageCarousel = ({ children, name } : PageCarouselProps) => {
                         setAnimateNextButton(false);
                     }}
                     disabled={name === ""}>
-                        Next
+                        {currentActiveCardState === 1 ? "Go!" : "Next"}
                 </button>
             </div>
             <div className="self-center flex pt-8">

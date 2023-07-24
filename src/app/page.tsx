@@ -5,6 +5,9 @@ import { DynamicTextInput } from "./components/DynamicTextInput/DynamicTextInput
 import { PageCarousel } from "./components/PageCarousel/PageCarousel";
 import { Footer } from "./components/Footer/Footer";
 import React from "react";
+import { ExampleQuizCard } from "./components/ExampleQuizCard/ExampleQuizCard";
+import { QuizCountdown } from "./components/QuizCountdown/QuizCountdown";
+import { QuizContainer } from "./components/QuizContainer/QuizContainer";
 
 export default function Home() {
     // TODO refactor name so it is part of a form onsubmit instead of rerender on every change
@@ -36,22 +39,24 @@ export default function Home() {
                         This name will be added to the leaderboards.
                     </div>
                 </div>
-                <div className="min-h-96 text-center">
-                    <div className="font-bold mb-2">
+                <div className="min-h-96 flex flex-col items-center">
+                    <div className="font-bold">
                         How is it done?
                     </div>
                     <div>
-                        10 seconds. 60 questions. 1 brain.
+                        60 seconds. 10 questions. 1 brain.
                     </div>
-                    <div className="rounded-lg h-56 w-44 bg-gray-200">
-                        fasd
+                    <div className="mt-4 mb-4 flex flex-col items-center">
+                        Question counter is at the top
+                        <ExampleQuizCard /> 
+                        Timer is at the bottom 
+                    </div>
+                    <div className="font-bold">
+                        Ready?
                     </div>
                 </div>
-                <div className="min-h-96 text-center">
-                    Your score was 
-                    <div ref={score}>
-
-                    </div>
+                <div className="min-h-96 text-center flex flex-col">
+                    <QuizContainer />
                 </div>
             </PageCarousel>
 
